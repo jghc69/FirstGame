@@ -45,9 +45,9 @@ while AnotherGame:
 
     while True:
         Question=(input('Quisieras jugar de nuevo? si o no: '))
-        if Question =='si':
+        if Question == 'si':
          break
-        elif Question =='no':
+        elif Question == 'no':
             AnotherGame=False 
             print('Adios')
             break
