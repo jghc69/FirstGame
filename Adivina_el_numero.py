@@ -44,8 +44,8 @@ while AnotherGame:
         print('has perdido el numero era', NumeroRandom)
 
     while True:
-        Question=(input('Quisieras jugar de nuevo? si o no: '))
-        if Question == 'si':
+        Question=(input('Quisieras jugar de nuevo? si o no: ')).lower().strip()
+        if Question in ('si', 'sí'):
          break
         elif Question == 'no':
             AnotherGame=False 
