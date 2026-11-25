@@ -1,6 +1,6 @@
 import random
 
-print('Hola!, bienvenido al juego adivina el numero, el cual esta comprendido del 1 al 100, puedes fallar un maximo de 10 veces, empezamos')
+print('Hola!, bienvenido al juego adivina el numero, el cual esta comprendido del 1 al 100, puedes fallar un maximo de 10 veces, empezamos: ')
 AnotherGame = True
 
 while AnotherGame:
@@ -24,6 +24,7 @@ while AnotherGame:
             intentos.append(Respuesta)
         else:
             fallos+=1
+      
         if Respuesta < NumeroRandom:
             if nuevo:
                 fallos +=1
@@ -34,14 +35,23 @@ while AnotherGame:
                 fallos +=1
             print('Pista: Mas bajo')
         else:
-            print('Acertaste!! lo lograste en',fallos,'fallos')
+            if fallos == 1:
+                palabra = 'fallo'
+            else:
+                palabra = 'fallos'
+            print('Acertaste!! lo lograste en',fallos,palabra)
             break
-        
-        print('ya van',fallos,'fallos')
-        if  7<= fallos <=9:
-            print('Cuidado crack te quedan', 10 - fallos,'fallos')
+        if fallos == 1:
+                palabra = 'fallo'
+        else:
+                palabra = 'fallos'
+        print('Ya llevas',fallos,palabra)
+        if  7<= fallos <=8:
+            print('Cuidado crack te quedan', 10 - fallos,palabra)
+        elif fallos == 9:
+            print('Cuidado crack te quedan', 10 - fallos,'fallo')
     if fallos == 10:
-        print('has perdido el numero era', NumeroRandom)
+        print('Has perdido el numero era', NumeroRandom)
 
     while True:
         Question=(input('Quisieras jugar de nuevo? si o no: ')).lower().strip()
